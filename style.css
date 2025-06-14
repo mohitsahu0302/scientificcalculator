@@ -1,0 +1,145 @@
+/* Custom font for a cleaner look */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f3f4f6; /* Light gray background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    margin: 0;
+    padding: 20px; /* Padding for smaller screens */
+    box-sizing: border-box;
+}
+.calculator-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns for buttons */
+    gap: 12px; /* Spacing between buttons */
+    padding: 16px;
+    background-color: #ffffff; /* White background for the calculator body */
+    border-radius: 1.5rem; /* More rounded corners */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* Soft shadow */
+    max-width: 500px; /* Max width for desktop */
+    width: 100%; /* Responsive width */
+}
+.calculator-display {
+    grid-column: span 5; /* Span all columns */
+    background-color: #1f2937; /* Dark background for display */
+    color: #e0f2f7; /* Light blue text color */
+    border-radius: 0.75rem; /* Rounded corners for display */
+    padding: 20px;
+    text-align: right;
+    margin-bottom: 12px;
+    word-wrap: break-word; /* Wrap long expressions */
+    word-break: break-all; /* Break words if too long */
+}
+.calculator-display .previous-operand {
+    font-size: 0.9em;
+    color: #9ca3af; /* Lighter color for previous expression */
+    min-height: 1.5em; /* Ensure some height even if empty */
+}
+.calculator-display .current-operand {
+    font-size: 2.5em;
+    font-weight: 500;
+    min-height: 1.5em; /* Ensure some height even if empty */
+}
+.calculator-button {
+    padding: 18px 0; /* Vertical padding */
+    border-radius: 0.75rem; /* Rounded button corners */
+    font-size: 1.3em;
+    font-weight: 500;
+    color: #374151; /* Dark gray text */
+    background-color: #f9fafb; /* Off-white button background */
+    border: none;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Add shadow and hover effects directly in Tailwind for consistency */
+}
+.calculator-button:hover {
+    background-color: #e5e7eb; /* Slightly darker on hover */
+    transform: translateY(-1px); /* Slight lift effect */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+.calculator-button:active {
+    background-color: #d1d5db; /* Even darker on active */
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Specific styles for operators, equals, and clear buttons */
+.operator-button {
+    background-color: #dbeafe; /* Light blue for operators */
+    color: #1d4ed8; /* Darker blue text */
+}
+.operator-button:hover {
+    background-color: #bfdbfe;
+}
+.operator-button:active {
+    background-color: #93c5fd;
+}
+
+.equals-button {
+    background-color: #10b981; /* Green for equals */
+    color: white;
+    grid-column: span 2; /* Make equals button wider */
+    font-weight: 700;
+}
+.equals-button:hover {
+    background-color: #059669;
+}
+.equals-button:active {
+    background-color: #047857;
+}
+
+.clear-button {
+    background-color: #fee2e2; /* Light red for clear */
+    color: #dc2626; /* Darker red text */
+    grid-column: span 2; /* Make clear button wider */
+}
+.clear-button:hover {
+    background-color: #fecaca;
+}
+.clear-button:active {
+    background-color: #fca5a5;
+}
+
+.function-button {
+    background-color: #e0f2f7; /* Lighter blue for functions */
+    color: #06b6d4; /* Teal text */
+    font-size: 1.1em; /* Slightly smaller font for functions */
+}
+.function-button:hover {
+    background-color: #ccecf4;
+}
+.function-button:active {
+    background-color: #a7d9e6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .calculator-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 columns on small screens */
+        gap: 10px;
+        padding: 12px;
+        border-radius: 1rem;
+    }
+    .calculator-display {
+        grid-column: span 4;
+        padding: 16px;
+        margin-bottom: 10px;
+    }
+    .calculator-display .current-operand {
+        font-size: 2em;
+    }
+    .calculator-button {
+        font-size: 1.1em;
+        padding: 14px 0;
+        border-radius: 0.6rem;
+    }
+    .equals-button, .clear-button {
+        grid-column: span 2;
+    }
+}
