@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS file link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator-grid">
+        <div class="calculator-display">
+            <div data-previous-operand class="previous-operand"></div>
+            <div data-current-operand class="current-operand">0</div>
+        </div>
+
+        <button data-all-clear class="calculator-button clear-button">AC</button>
+        <button data-delete class="calculator-button operator-button">DEL</button>
+        <button data-function="exp" class="calculator-button function-button">e^x</button>
+        <button data-function="power" class="calculator-button function-button">x^y</button>
+        <button data-operator="/" class="calculator-button operator-button">/</button>
+
+        <button data-number="7" class="calculator-button">7</button>
+        <button data-number="8" class="calculator-button">8</button>
+        <button data-number="9" class="calculator-button">9</button>
+        <button data-function="sin" class="calculator-button function-button">sin</button>
+        <button data-operator="*" class="calculator-button operator-button">*</button>
+
+        <button data-number="4" class="calculator-button">4</button>
+        <button data-number="5" class="calculator-button">5</button>
+        <button data-number="6" class="calculator-button">6</button>
+        <button data-function="cos" class="calculator-button function-button">cos</button>
+        <button data-operator="-" class="calculator-button operator-button">-</button>
+
+        <button data-number="1" class="calculator-button">1</button>
+        <button data-number="2" class="calculator-button">2</button>
+        <button data-number="3" class="calculator-button">3</button>
+        <button data-function="tan" class="calculator-button function-button">tan</button>
+        <button data-operator="+" class="calculator-button operator-button">+</button>
+
+        <button data-number="." class="calculator-button">.</button>
+        <button data-number="0" class="calculator-button">0</button>
+        <button data-equals class="calculator-button equals-button"> = </button>
+    </div>
+
+    <!-- Custom JavaScript file link -->
+    <script src="script.js"></script>
+</body>
+</html>
